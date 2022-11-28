@@ -3,7 +3,11 @@ class UsersController < ApplicationController
     @user = User.new
     @user.email = params[:email]
     @user.password = params[:password]
-    p @user
-    @user.save
+    @user.password_confirmation = params[:password_confirmation]
+    if @user.save
+      render json: {resouces: @user}, status: 200
+    else
+      render json: {errors: @user.errors}, status: 400
+    end
   end
 end
