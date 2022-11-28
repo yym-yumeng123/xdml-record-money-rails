@@ -1,0 +1,49 @@
+
+zh-CN:
+  activemodel:
+    errors:
+      models:
+        session:
+          attributes:
+            password:
+              blank: 密码不能为空
+              too_short: 密码不能少于6个字符
+              mismatch: 密码与用户名不匹配
+            email:
+              taken: 邮箱已经被注册了
+              blank: 邮箱不能为空
+              invalid: 邮箱必须含有 @ 字符
+              not_found: 该邮箱未注册
+  activerecord:
+    errors:
+      models:
+        record:
+          attributes:
+            amount:
+              blank: 金额不能为空
+            category:
+              blank: 类型不能为空
+            user:
+              required: 用户不能为空
+        user:
+          attributes:
+            password:
+              blank: 密码不能为空
+              too_short: 密码不能少于6个字符
+            email:
+              taken: 邮箱已经被注册了
+              blank: 邮箱不能为空
+              invalid: 邮箱必须含有 @ 字符
+            password_confirmation:
+              blank: 请填写确认密码
+              confirmation: 两次密码不匹配
+        tag:
+          attributes:
+            name:
+              blank: 标签名不能为空
+        tagging:
+          attributes:
+            record:
+              required: 记录不能为空
+            tag:
+              required: 标签不能为空
