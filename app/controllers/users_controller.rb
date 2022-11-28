@@ -7,5 +7,9 @@ class UsersController < ApplicationController
     params.permit(:email, :password, :password_confirmation)
   end
 
+  def me
+    render_resource current_user
+  end
+
 
 end

@@ -6,6 +6,8 @@ class SessionsController < ApplicationController
     @session = Session.new create_params
     @session.validate
     render_resource @session
+
+    session[:current_user_id] = @session.user.id
   end
 
   def destroy
