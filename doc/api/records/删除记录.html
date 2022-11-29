@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>旺财API文档</title>
-  <meta charset="utf-8">
-  <style>
-    
+  <head>
+    <title>Records API</title>
+    <meta charset="utf-8">
+    <style>
+      
 body {
   font-family: Helvetica,Arial,sans-serif;
   font-size: 13px;
@@ -39,7 +39,7 @@ pre {
 
 td.required .name:after {
   float: right;
-  content: &quot;required&quot;;
+  content: "required";
   font-weight: normal;
   color: #F08080;
 }
@@ -102,36 +102,37 @@ table th, table td {
   text-align: left;
 }
 
-  </style>
-</head>
-<body>
-<div class="container">
-  <h1>旺财API文档</h1>
-  
-    请求数据格式：默认使用JSON格式，但也支持 application/x-www-form-urlencoded 格式。
-    状态码：200表示成功，400表示失败，422表示表单数据校验不通过，其他状态码请查阅维基百科。
-  
-  <div class="article">
-    <h2>Records</h2>
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Records API</h1>
 
-    <ul>
-      <li>
-        <a href="records/创建记录.html">创建记录</a>
-      </li>
-      <li>
-        <a href="records/删除记录.html">删除记录</a>
-      </li>
-    </ul>
-  </div>
-  <div class="article">
-    <h2>Users</h2>
+      <div class="article">
+        <h2>删除记录</h2>
+        <h3>DELETE /records/:id</h3>
 
-    <ul>
-      <li>
-        <a href="users/创建文档(注册).html">创建文档(注册)</a>
-      </li>
-    </ul>
-  </div>
-</div>
-</body>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Content-Type: application/json
+Cookie: _xdml_record_money=sf3LVoqv9Wok4NNi7pFpL4Gvq7wQ1b9QYjPiHd0A2pRvxo7TeQ%2FFfHnZWnh2lPU0xkulKHelmx4W7jMpIPrOzZ4gKkqEgD7DepWsvwgqO%2FXQPaf5Q15QMJZQ4Q2rZmxCggQGXHz4gUv%2BDr3U1q6%2B98ZuDHAwdsMif01uIQvrqFwQSNb9%2FHBxoGDvYaG5LYHil0wjLPZi3VXv6Hp1pbrwt43PwJmTaZnlJ9KFVB1%2Br6w365Mx6PLBTWzs--VQPdhZslrg3t%2FFrt--D8ll5sH8ql%2BZ9%2FawDey2Gw%3D%3D</pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">DELETE /records/43</pre>
+
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">Content-Type: application/json
+Set-Cookie: _xdml_record_money=BbGhjSUslhrUkXX80mib0WcZD58VeNnmIiGBfGo%2FOfLXWQH3VADUYN7XtsRO4%2BKs62kF%2F2G5tH4NbJRKKAVaX2e9KZGv%2Fyr%2FiXjDriyv%2FD%2B87esV7gsCpYcYZB%2FWin2LAT6KdphVsdqKUUX%2F1lDEzSy91lwFVSEIy9y7Hs9fc93U8sswTN9ewqiDibU625ClJ6Bab3egCxg%2Ftd1h%2BoxpaC6Th2U6ze3wUqXHKHr5AdswzCtHj%2FJVam47--f2r1SlXgXmHIwozx--sRVB0BNkSugIMTzgJR%2Fr8g%3D%3D; path=/; HttpOnly</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+      </div>
+    </div>
+  </body>
 </html>

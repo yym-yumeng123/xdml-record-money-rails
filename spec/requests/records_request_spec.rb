@@ -30,21 +30,22 @@ RSpec.describe "Record", type: :request do
     end
   end
 
-  # context 'destroy' do
-  #   it 'should not destroy a record before sign in' do
-  #     # ! 意思是报错就终止
-  #     record = create :record, user: @user
-  #     delete "/records/#{record.id}"
-  #     expect(response.status).to eq 401
-  #   end
+  context 'destroy' do
+    it 'should not destroy a record before sign in' do
+      # ! 意思是报错就终止
+      record = Record.create amount: 10000, category: 'outgoings', notes: '请客1'
+      delete "/records/#{record.id}"
+      expect(response.status).to eq 401
+    end
 
-  #   it 'should destroy a record' do
-  #     sign_in
-  #     record = create :record, user: @user
-  #     delete "/records/#{record.id}"
-  #     expect(response.status).to eq 200
-  #   end
-  # end
+    it 'should destroy a record' do
+      sign_in
+      # record = create :record, user: @user
+      record = Record.create amount: 10000, category: 'outgoings', notes: '请客1'
+      delete "/records/#{record.id}"
+      expect(response.status).to eq 200
+    end
+  end
 
   # # 获取所有 index
   # context 'index' do

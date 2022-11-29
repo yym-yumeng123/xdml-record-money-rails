@@ -2,8 +2,8 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource "Records" do
-  let(:user){create(:user, email: 'aekjgsr@qq.com')}
-  let(:record){Record.create! amount: 10000, category: 'income', user: user}
+  # let(:user){create(:user, email: 'aekjgsr@qq.com')}
+  let(:record){Record.create! amount: 10000, category: 'income'}
   let(:id){record.id}
   let(:amount){10000}
   let(:category){'outgoings'}
@@ -21,13 +21,13 @@ resource "Records" do
     end
   end
 
-  # delete "/records/:id" do
-  #   example "删除记录" do
-  #     sign_in
-  #     do_request
-  #     expect(status).to eq 200
-  #   end
-  # end
+  delete "/records/:id" do
+    example "删除记录" do
+      sign_in
+      do_request
+      expect(status).to eq 200
+    end
+  end
 
   # get "/records" do
   #   parameter :page, '页码', type: :integer
