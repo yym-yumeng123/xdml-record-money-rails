@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :email, uniqueness: true
   validates :password_confirmation, presence: true, on: :create
-  validates_format_of :email, with: /.+@.+/, on: :create, if: :email
+  validates_format_of :email, with: /.+@.+/, on: :create, if: Proc.new { |u| u.email.present? }
   validates :password, length: { in: 6..20 }, on: :create, if: :password
 
   after_create :send_welcome_mail
