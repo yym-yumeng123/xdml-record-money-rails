@@ -21,3 +21,10 @@ bundle binstubs rspec-core
 # 使用命令
 bin/rspec
 ```
+
+
+### 生成文档
+
+```rb
+bin/rake docs:generate
+```
