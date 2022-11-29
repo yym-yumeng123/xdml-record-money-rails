@@ -11,3 +11,13 @@ rails new xdml-record-money --database=postgresql --skip-action-mailbox --skip-a
 ```
 docker run -v xdml-record-money-data:/var/lib/postgresql/data -p 5001:5432 -e POSTGRES_USER=yym -e POSTGRES_PASSWORD=123456 -d postgres:12.2
 ```
+
+### 测试 RSpec
+
+```rb
+# 生成命令
+bundle binstubs rspec-core
+
+# 使用命令
+bin/rspec
+```
