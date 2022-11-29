@@ -47,46 +47,49 @@ RSpec.describe "Record", type: :request do
     end
   end
 
-  # # 获取所有 index
-  # context 'index' do
-  #   it 'should not get a record before sign_in' do
-  #     get '/records'
-  #     expect(response.status).to eq 401
-  #   end
+  # 获取所有 index
+  context 'get' do
+    it 'should not get a record before sign_in' do
+      get '/records'
+      expect(response.status).to eq 401
+    end
 
-  #   it 'should get records' do
-  #     (1..20).to_a.map do
-  #       create :record, user: @user
-  #     end
-  #     sign_in
-  #     get '/records'
-  #     expect(response.status).to eq 200
-  #     body = JSON.parse response.body
-  #     expect(body['resources'].length).to eq 10
-  #   end
-  # end
+    it 'should get records' do
+      (1..20).to_a.map do
+        # create :record, user: @user
+        Record.create amount: 10000, category: 'outgoings', notes: '请客1'
+      end
+      sign_in
+      get '/records'
+      expect(response.status).to eq 200
+      body = JSON.parse response.body
+      expect(body['resources'].length).to eq 10
+    end
+  end
 
-  # # 获取一个 show
-  # context 'show' do
-  #   it 'should not get a record before sign_in' do
-  #     record =create :record, user: @user
-  #     get "/records/#{record.id}"
-  #     expect(response.status).to eq 401
-  #   end
+  # 获取一个 show
+  context 'show' do
+    it 'should not get a record before sign_in' do
+      # record =create :record, user: @user
+      record = Record.create amount: 10000, category: 'outgoings', notes: '请客1'
+      get "/records/#{record.id}"
+      expect(response.status).to eq 401
+    end
 
-  #   it 'should get a record' do
-  #     sign_in
-  #     record = create :record, user: @user
-  #     get "/records/#{record.id}"
-  #     expect(response.status).to eq 200
-  #   end
+    it 'should get a record' do
+      sign_in
+      # record = create :record, user: @user
+      record = Record.create amount: 10000, category: 'outgoings', notes: '请客1'
+      get "/records/#{record.id}"
+      expect(response.status).to eq 200
+    end
 
-  #   it 'should get a record because not found' do
-  #     sign_in
-  #     get "/records/9999999"
-  #     expect(response.status).to eq 404
-  #   end
-  # end
+    it 'should get a record because not found' do
+      sign_in
+      get "/records/9999999"
+      expect(response.status).to eq 404
+    end
+  end
 
   # context 'update' do
   #   it 'should not update a record before sign in' do

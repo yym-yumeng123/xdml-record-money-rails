@@ -109,8 +109,8 @@ table th, table td {
       <h1>Records API</h1>
 
       <div class="article">
-        <h2>创建记录</h2>
-        <h3>POST /records</h3>
+        <h2>获取所有记录</h2>
+        <h3>GET /records</h3>
 
           <h3>Parameters</h3>
           <table class="parameters table table-striped table-bordered table-condensed">
@@ -122,27 +122,11 @@ table th, table td {
             </thead>
             <tbody>
               <tr>
-                <td class="required">
-                    <span class="name">amount</span>
+                <td>
+                    <span class="name">page</span>
                 </td>
                 <td>
-                  <span class="description">金额</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="required">
-                    <span class="name">category</span>
-                </td>
-                <td>
-                  <span class="description">类型: outgoings: 1|income: 2</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">notes</span>
-                </td>
-                <td>
-                  <span class="description">备注</span>
+                  <span class="description">页码</span>
                 </td>
               </tr>
             </tbody>
@@ -153,33 +137,24 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: _xdml_record_money=cu3y%2FmuveOmS7Etc4lQ6LXgdeQI7vAT%2FTfHXCHa15iP%2BpixDYEm6y0FCXCUl1MorSkbqRTjZi2W0BI4LZ9R9kevaq5U9oqIQcOKZOCsNCRwhYGSw0%2FWThk8RY6JlgSmbOrpov3NYDIZ1PXKuDkxJeiVUzZr%2Fr4te1MMTA9MHnZRyelITeQj2xU4tnk4R7y%2FHvbFBPyPq0OuFtYd1O83wfxE%2BIvjVURMm9WTC5yZMGLMci5Ej9QJmY22m--ld007lPREMUKA7O4--GEfjudw%2FxUB4cIMFjxTv8g%3D%3D</pre>
+Cookie: _xdml_record_money=0M%2Buok7HY6ANIlVsQWxFAfqjBMLTL2puMk8rVJE33UHW0lbyhgczE%2FHgZhXomCF%2BAwR1s13i5bTPxmZaEYJiC09yWv65cN225fWGHtMYcDoacDjj0Wkq5gcO8QgaPxbawtA%2FfeDrReRjH8pS5Dtzh8Zfw3JLPySWZUaOUjEB46hDV%2BnjMYLvLL7RzwgJlrSMxoe05gxBdG6nZAFhCn9iKGMIi8o9rMJWmy0tr%2FTPWRCZONqiiNVn0%2FNz--Kgwyt0NQ33qfnOpb--M5sOOqYJf7KWnKnAFhM2oA%3D%3D</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST /records</pre>
+          <pre class="request route highlight">GET /records?page=1</pre>
 
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">page: 1</pre>
 
-            <h4>Body</h4>
-            <pre class="request body">{"amount":10000,"category":"outgoings","notes":"生活开支"}</pre>
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-Set-Cookie: _xdml_record_money=U8LnzKEZjSdCYwwO%2BFDKZ8aN%2BWBznvEXcOPgtVrIXw4NfrW9nzeePXXTHJcRhYRU0yQ53l803Uj3gbSY6tNsveyvTo9M4Rqc8fiH0VG5WS0Ldny2OtBI2%2F1HYOGhUQ1h0HduTdN3fSOQPAPkHg1e6FUgKprSDt5kKp28RmyNJtnzvFd4lTs3f0OVli7U0PpQWCdDCQ3z99RGU9XDy5CIJAiHnovF54jLediBkvWbB7JVfSugPiY9Hfb9--KxCdML3geVJZLKH9--%2BdBS9XTlk6rqt%2F0BZthS4g%3D%3D; path=/; HttpOnly</pre>
+Set-Cookie: _xdml_record_money=K3EiPbZtDaBjHTPcckv59ocbiBLqCE6vjCLOWWx%2BNgMKmRe022iuyb%2BhncALcdeigwYMWml6DDzYn6JYEov59AoP5ya5NkhuOM7EqngHDxuwPmpF9OfyReBG39122Jj5DjQInw41Qo7FC7mfd%2FRRQwN%2F3blmnR%2FqD%2FgjR3jzeYkpagMosV%2FuAQhVGMFWu%2FZRS%2FJz%2F4YiBZzx1jtkbGdsmLIr5uit6ljl58pMphEnHzJ1pA%2B0Cf%2BWRsdn--1Sr7e5FZLqiISDCG--9d5M%2Fc40xSwM8yHG6vNWBA%3D%3D; path=/; HttpOnly</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
-              <pre class="response body">{
-  &quot;resources&quot;: {
-    &quot;id&quot;: 155,
-    &quot;amount&quot;: 10000,
-    &quot;category&quot;: &quot;outgoings&quot;,
-    &quot;notes&quot;: &quot;生活开支&quot;,
-    &quot;created_at&quot;: &quot;2022-11-29T09:30:07.832Z&quot;,
-    &quot;updated_at&quot;: &quot;2022-11-29T09:30:07.832Z&quot;
-  }
-}</pre>
+              <pre class="response body">[binary data]</pre>
       </div>
     </div>
   </body>
