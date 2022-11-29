@@ -21,14 +21,17 @@ class RecordsController < ApplicationController
     render_resource @record
   end
 
+  def update
+    @record = Record.find(params[:id])
+
+    @record.update create_params
+    render_resource @record
+  end
+
   private
 
   def create_params
     params.permit(:amount, :category, :notes)
   end
 
-  # 获取数组数据
-  def render_arr_resource(resources)
-    render json: {resources: resources}
-  end
 end

@@ -53,14 +53,14 @@ resource "Records" do
     end
   end
 
-  # patch "/records/:id" do
-  #   parameter :amount, '金额', type: :integer, required: true
-  #   parameter :category, '类型: outgoings: 1|income: 2', type: :integer, required: true
-  #   parameter :notes, '备注', type: :string
-  #   example '更新一个记录' do
-  #     sign_in
-  #     do_request amount: 9900
-  #     expect(status).to eq 200
-  #   end
-  # end
+  patch "/records/:id" do
+    parameter :amount, '金额', type: :integer, required: true
+    parameter :category, '类型: outgoings: 1|income: 2', type: :integer, required: true
+    parameter :notes, '备注', type: :string
+    example '更新一个记录' do
+      sign_in
+      do_request amount: 9900
+      expect(status).to eq 200
+    end
+  end
 end

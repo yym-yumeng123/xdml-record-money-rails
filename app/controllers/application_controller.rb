@@ -29,6 +29,11 @@ class ApplicationController < ActionController::API
     end
   end
 
+  # 获取数组数据
+  def render_arr_resource(resources)
+    render json: {resources: resources}
+  end
+
   def render_must_sign_in
     render status: :unauthorized
   end
