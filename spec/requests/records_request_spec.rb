@@ -6,13 +6,13 @@ RSpec.describe "Record", type: :request do
   # end
 
   context 'create' do
-    # it "should not create a record before sign in" do
-    #   post '/records', params: {amount: 10000, category: 'outgoings', notes: '请客'}
-    #   expect(response.status).to eq 401
-    # end
+    it "should not create a record before sign in" do
+      post '/records', params: {amount: 10000, category: 'outgoings', notes: '请客'}
+      expect(response.status).to eq 401
+    end
 
     it "should create a record" do
-      # sign_in
+      sign_in
       # 金额单位为最小单位 分, 防止浮点数不精确 10000分
       # 类型: 支出 outgoings
       post '/records', params: {amount: 10000, category: 'outgoings', notes: '请客'}
@@ -22,7 +22,7 @@ RSpec.describe "Record", type: :request do
     end
 
     it "should not create a record" do
-      # sign_in
+      sign_in
       post '/records', params: {category: 'outgoings', notes: '请客'}
       expect(response.status).to eq 422
       body = JSON.parse(response.body)

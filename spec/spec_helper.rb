@@ -21,7 +21,7 @@ end
 # 写一个通用
 module SpecTestHelper
   def sign_in(user = nil)
-    user ||= create(:user, email: 'spec_test-helper@qq.com')
+    user ||= User.create!(email: 'spec_test-helper@qq.com', password: '123456', password_confirmation: '123456')
     post '/sessions', params: {email: user.email, password: user.password}
     user # return user
   end
