@@ -6,8 +6,7 @@ resource "Taggings" do
   let(:tag){Tag.create! name: '饮食'}
   let(:tag_id){tag.id}
   let(:record_id){record.id}
-  # , user: user
-  let(:record){Record.create! amount: 10000, category: 'income'}
+  let(:record){Record.create! amount: 10000, category: 'income', user: user}
   let(:tagging){Tagging.create! tag: tag, record: record}
   let(:id){tagging.id}
   let(:taggings){

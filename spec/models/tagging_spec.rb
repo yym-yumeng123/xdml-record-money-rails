@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Tagging, type: :model do
   context 'create' do
-    # before :each do
-    #   @user = User.create! email: 'agjgsr@qq.com', password: '123456', password_confirmation: '123456'
-    # end
+    before :each do
+      @user = User.create! email: 'agjgsr@qq.com', password: '123456', password_confirmation: '123456'
+    end
     it 'require record' do
       tag = Tag.create! name: 'test'
       tagging = Tagging.create tag: tag
@@ -12,8 +12,7 @@ RSpec.describe Tagging, type: :model do
       expect(tagging.errors[:record][0]).to eq('记录不能为空')
     end
     it 'require tag' do
-      # , user: @user
-      record = Record.create! amount: 10000, category: 'outgoings'
+      record = Record.create! amount: 10000, category: 'outgoings', user: @user
       tagging = Tagging.create record: record
       expect(tagging.errors.details[:tag][0][:error]).to eq(:blank)
       expect(tagging.errors[:tag][0]).to eq('标签不能为空')
@@ -22,8 +21,7 @@ RSpec.describe Tagging, type: :model do
     it 'should has record and tag' do
 
       tag = Tag.create! name: 'test'
-      # , user: @user
-      record = Record.create! amount: 10000, category: 'outgoings'
+      record = Record.create! amount: 10000, category: 'outgoings', user: @user
       tagging = Tagging.create record: record, tag: tag
       expect(tag.records.first.id).to eq record.id
       expect(record.tags.first.id).to eq tag.id
@@ -32,10 +30,8 @@ RSpec.describe Tagging, type: :model do
     it 'should has records and tags' do
       tag1 = Tag.create! name: 'test'
       tag2 = Tag.create! name: 'test1'
-      # , user: @user
-      record1 = Record.create! amount: 10000, category: 'outgoings'
-      # , user: @user
-      record2 = Record.create! amount: 10000, category: 'outgoings'
+      record1 = Record.create! amount: 10000, category: 'outgoings', user: @user
+      record2 = Record.create! amount: 10000, category: 'outgoings', user: @user
       Tagging.create record: record1, tag: tag1
       Tagging.create record: record2, tag: tag1
       Tagging.create record: record1, tag: tag2
