@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Records API</title>
+    <title>Taggings API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,30 +106,59 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Records API</h1>
+      <h1>Taggings API</h1>
 
       <div class="article">
-        <h2>获取一个的记录</h2>
-        <h3>GET /records/:id</h3>
+        <h2>创建标记</h2>
+        <h3>POST /taggings</h3>
 
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="required">
+                    <span class="name">tag_id</span>
+                </td>
+                <td>
+                  <span class="description">标签ID</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">record_id</span>
+                </td>
+                <td>
+                  <span class="description">记录ID</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
 
           <h3>Request</h3>
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: _xdml_record_money=S%2BoHQOHQqQ40Zj7gWGB0XgmmmCOnqbj%2BCL65KJvri8K%2By34FD3FSGBKj%2BWb%2FtxFE404KEhif3%2BPgFsI3tUaGYdBaAuCWGW6uTTS8cB7GxKiVeEhnwA0jlgVNZ4qtMUINxaowFD%2F%2BWJzcVNrsut4mkdpofnR%2BRXLRMNhNz88schdlyTxbulcQ9se2tYhE2lXyBKnV5jUQL9QQDRwXqJOOuR0uM0gHzJgYMNGXQGDi5Y66cJumtwDTO15B--QH6f1JAReF0K551q--6QSAR%2FsD5JNCYyw2WS7%2B8w%3D%3D</pre>
+Cookie: _xdml_record_money=38b3O9TcW2ioWs0YxC%2FIouZzMkfEfLbbAVk2s99KCXcXdLmifS6gdcoOi9DK3r4LdriqUIgc50QF92ADRoYJiOyUzNqjJhOAoc7FuceFBYGEovFgto5bnZ4rdl89UDhYsIFF%2BrAQxp6eiskXG8A5EH%2BkHiZYzxp4F%2F6PCPOqRKgo3HDzCN15IfFQ0k3f1d2apwFMgXi7e3RKdF9HqN0IxiaZhWzQ8%2FeuDZBwCYum25vn%2FwkyeFXGCsML--6Kl0t%2FcsegPTZmzA--tdz%2Bv%2BVA3jZjdvo%2FO7DEAg%3D%3D</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /records/1000</pre>
+          <pre class="request route highlight">POST /taggings</pre>
 
 
+            <h4>Body</h4>
+            <pre class="request body">{"tag_id":1049,"record_id":1002}</pre>
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-Set-Cookie: _xdml_record_money=qT2LowrwSgSfjf1GhRuYhJRdB6HllDBwJSx%2B0Aa5DFQZ8iCSM1zNyq3%2F9FG%2Bq1uSLaDIffLHyBIFeefjWGhQweakRVJHCaBMrre6IM63D1WcbG4FAErcTyNLuWthKsJLbnQjzkF41S9cYhRH%2BzLKRWf%2FEAXI0UkSYRq5aDG0TI6eIFO4XMBrwOLHQb8%2BqYNg%2F0okxd1dL7bQTy8HnZI81SU%2BrBjY8WJXBswPXX57WncAp8PEtv5asDGF--Q8c1xNnZH4kCLLeN--N9xW6%2FoNTGwlV26Rihj6VQ%3D%3D; path=/; HttpOnly</pre>
+Set-Cookie: _xdml_record_money=jmCpjay9OTzvutTHw6TujncR4jgrDNOFP75M52jiz5iFz6R8DxeN3BwNUCOzOBlKNxaQ1xlkmMhKCYSg1R2cICc0Pt5Xlqv2Jzc7mfT%2FwQ5zxx2bGPoR9VXJPGHk3rvrLBuJ%2Fp94eCX3uFktnuV3VtGWB8pw3FrCkmio0%2FI9YDYHOkal7mXD6UcyaguIz%2B5JWygdjX0FPzUQ4yR9Pn1ko8wVpJZGQTz2KAGd2wUKfNM8X7jxllNgM9v0--6WEqR3SvzOFSFqzJ--0ldFSrUvlme6%2Bi9LTQWNAQ%3D%3D; path=/; HttpOnly</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>

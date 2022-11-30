@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Records API</title>
+    <title>Taggings API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,30 +106,51 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Records API</h1>
+      <h1>Taggings API</h1>
 
       <div class="article">
-        <h2>获取一个的记录</h2>
-        <h3>GET /records/:id</h3>
+        <h2>获取所有标记</h2>
+        <h3>GET /taggings</h3>
 
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">page</span>
+                </td>
+                <td>
+                  <span class="description">页码</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
 
           <h3>Request</h3>
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: _xdml_record_money=S%2BoHQOHQqQ40Zj7gWGB0XgmmmCOnqbj%2BCL65KJvri8K%2By34FD3FSGBKj%2BWb%2FtxFE404KEhif3%2BPgFsI3tUaGYdBaAuCWGW6uTTS8cB7GxKiVeEhnwA0jlgVNZ4qtMUINxaowFD%2F%2BWJzcVNrsut4mkdpofnR%2BRXLRMNhNz88schdlyTxbulcQ9se2tYhE2lXyBKnV5jUQL9QQDRwXqJOOuR0uM0gHzJgYMNGXQGDi5Y66cJumtwDTO15B--QH6f1JAReF0K551q--6QSAR%2FsD5JNCYyw2WS7%2B8w%3D%3D</pre>
+Cookie: _xdml_record_money=%2BasqSj%2FiL%2FgxUpqGxYXDjkbclS8JiOp6945syUfGHY9w4g3Am5VbzfNupDkUqmof7k4Af%2BNN8mtH4fCJwseI3rAwqnG%2BjCrBLwZt9ZQuQtRXiTIvVuhRaGJumRXPXMCDCH%2BtMLs%2BHC%2FuL9j6sFViqNnMNbdisRZWy3GGSXIPkNZvSDf7k04tOT0YxKJaIOtmAivaTlAKiPWMr08x2yp%2BQjg97wcdmokI7rpttz9a4q6VYXJOa6XiAI41--s785jGMONoVs8S8L--nUwOU%2B8f86V56DVhUMHVSw%3D%3D</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /records/1000</pre>
+          <pre class="request route highlight">GET /taggings?page=1</pre>
 
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">page: 1</pre>
 
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-Set-Cookie: _xdml_record_money=qT2LowrwSgSfjf1GhRuYhJRdB6HllDBwJSx%2B0Aa5DFQZ8iCSM1zNyq3%2F9FG%2Bq1uSLaDIffLHyBIFeefjWGhQweakRVJHCaBMrre6IM63D1WcbG4FAErcTyNLuWthKsJLbnQjzkF41S9cYhRH%2BzLKRWf%2FEAXI0UkSYRq5aDG0TI6eIFO4XMBrwOLHQb8%2BqYNg%2F0okxd1dL7bQTy8HnZI81SU%2BrBjY8WJXBswPXX57WncAp8PEtv5asDGF--Q8c1xNnZH4kCLLeN--N9xW6%2FoNTGwlV26Rihj6VQ%3D%3D; path=/; HttpOnly</pre>
+Set-Cookie: _xdml_record_money=4RqyGIubxBrDNtDCectLIkSc489G23VpXCdCmmeFejsBskHIy%2FP81KDezIsuC%2FLnKSCHj1ObgmoH6XYx3OKwKUbmNQuiCuF8Rju1gdhb5b%2BVZ%2FZkmZxjk3HIPCqliehgtmgiH8MxiYgNVc8shzMmJCl%2FitNSfZNQ3Bcq6gpNG1KRAq9xmtG4IeHRMNQ8ozIRx3s3RdBXa7PBUZZxUMIZOqpOBMMYvUaNAWuxOwbmVpVT8SoIzXHQS96Z--N659GQ%2FaqUsEkZyO--f6IQ0rqMCYjDXEfnXvKBew%3D%3D; path=/; HttpOnly</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
