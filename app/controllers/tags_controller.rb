@@ -22,18 +22,11 @@ class TagsController < ApplicationController
     render_resource @tag
   end
 
-
-
   # PATCH/PUT /tags/1
   def update
-    if @tag.update(tag_params)
-      render json: @tag
-    else
-      render json: @tag.errors, status: :unprocessable_entity
-    end
+    @tag.update(tag_params)
+    render_resource @tag
   end
-
-
 
   private
     # Use callbacks to share common setup or constraints between actions.

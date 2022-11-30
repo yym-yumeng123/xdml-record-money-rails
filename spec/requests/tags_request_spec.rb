@@ -83,21 +83,21 @@ RSpec.describe "Tags", type: :request do
     end
   end
   
-  # # 更新
-  # context 'update' do
-  #   it 'should not update a tag before sign in' do
-  #     tag = Tag.create! name: 'text'
-  #     patch "/tags/#{tag.id}", params: {name: '饮食'}
-  #     expect(response.status).to eq 401
-  #   end
+  # 更新
+  context 'update' do
+    it 'should not update a tag before sign in' do
+      tag = Tag.create! name: 'text'
+      patch "/tags/#{tag.id}", params: {name: '饮食'}
+      expect(response.status).to eq 401
+    end
 
-  #   it 'should update a tag' do
-  #     sign_in
-  #     tag = Tag.create! name: 'text'
-  #     patch "/tags/#{tag.id}", params: {name: '饮食'}
-  #     expect(response.status).to eq 200
-  #     body = JSON.parse response.body
-  #     expect(body["resource"]["name"]).to eq '饮食'
-  #   end
-  # end
+    it 'should update a tag' do
+      sign_in
+      tag = Tag.create! name: 'text'
+      patch "/tags/#{tag.id}", params: {name: '饮食'}
+      expect(response.status).to eq 200
+      body = JSON.parse response.body
+      expect(body["resources"]["name"]).to eq '饮食'
+    end
+  end
 end
