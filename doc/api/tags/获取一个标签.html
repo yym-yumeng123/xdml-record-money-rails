@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Records API</title>
+    <title>Tags API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,55 +106,41 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Records API</h1>
+      <h1>Tags API</h1>
 
       <div class="article">
-        <h2>获取所有记录</h2>
-        <h3>GET /records</h3>
+        <h2>获取一个标签</h2>
+        <h3>GET /tags/:id</h3>
 
-          <h3>Parameters</h3>
-          <table class="parameters table table-striped table-bordered table-condensed">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                    <span class="name">page</span>
-                </td>
-                <td>
-                  <span class="description">页码</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
 
           <h3>Request</h3>
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: _xdml_record_money=reMlooJHcluo0oghBPTgWouGcc7FEAzMxEHBcxAJT4otcWlBirbPpdfcl3byysov8FRZ0hQzcACcc%2BIIzbvVk5vhxDWiqVubH9tUgCJlkRWbBkRO6hw5%2Bt0EqOmiEfBu2bF6ZZYxn%2FI%2ByTXe2B0S3qmMREl8un7q111Js5Bxlj3is8Ym11LbO5asmxacbKu4PuHo0KoUqbwZAj1%2BMy01eyLnn%2FSYmM1mz9bIXkWukFOc9GYcjlgnVwXX--cz%2FUfR9yEumBqm%2FS--Tc7KNoPNAhz9KWUooA8wJg%3D%3D</pre>
+Cookie: _xdml_record_money=hncytXk%2BfmurRA3yZSDCrJNoPGbJ5PB6hMkFDLoJZMfRJXnaHxiuTf499T1E5%2F6Fk1C6Tqsq9Nl86MraSAVsMWJm%2FSy0gxEJ8arHKDhHLT3oIpXulK%2B%2FiiaejFMYe7IdOjYbAyfqErBa5kfTupJ1sGrp5gumEOtBpmkt7eQnMiuvCUSIyYSRJiRVA3zDn1Jh0tWwhMl7ZPixdoe8Du4Ek1Gya1f4gkstcQcHZ7WPim4mJi69VKeAEoGW--7FoNh41MrdEgRr3g--cSyjXpROQCCh2McKQtItnQ%3D%3D</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /records?page=1</pre>
+          <pre class="request route highlight">GET /tags/165</pre>
 
-            <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">page: 1</pre>
 
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-Set-Cookie: _xdml_record_money=0c43m66NOqlFUtK6%2FCCB2%2BlzVg0DRr1EbbbPUC6EwU0PnvT85RgISRdzSCFh0BEJc763bSuB45M1pLSRy7%2BiMOjT50vuVZsXFF%2F9ox8JznZhsFiBydOJs9g7TXpmAwwGg8VDP9Ey1ImUkamkHwF9UB4jV%2BN36%2FWOXaign6zY7uTJ8zWI41YhHXv1ttwXTj1lMpIuS9kuRTRZCr2AYnUS0PMCpKsUi0V1K5qYMYGe65eb8AthdfwHdd1B--UeVcR6J64bvFKuqn--EhzFrt2FR5G%2FZixf3o%2FUgA%3D%3D; path=/; HttpOnly</pre>
+Set-Cookie: _xdml_record_money=3UFr9wDG7FZUKYg0lFAggZadWZwNEj4SR8AS9aZ5a9VUGsIQWzZFToXnLP5Vn8rMgxH%2BR%2BL46CilrbovrCrg%2Fk3h%2BXGlC%2BLx1jo79xpUruua%2FVd3ICPEVdZr5b8E2Qi%2F13gqt9g%2FdXw4V3j0UuqaFF8F5SNfUUAtdjpONNSyzUXSrtwzvQwTK3FgEOf4PlHiAzwOMR6hvzn5LmYRJJTLWtnFrlLl6BUb9jxTKaKsq1BYvgfXZyKghABx--ATjvotnmxt6%2BVPIn--yoncTXjg2AFEhbqtOLLQJQ%3D%3D; path=/; HttpOnly</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
-              <pre class="response body">[binary data]</pre>
+              <pre class="response body">{
+  &quot;resources&quot;: {
+    &quot;id&quot;: 165,
+    &quot;name&quot;: &quot;饮食&quot;,
+    &quot;created_at&quot;: &quot;2022-11-30T02:47:03.461Z&quot;,
+    &quot;updated_at&quot;: &quot;2022-11-30T02:47:03.461Z&quot;
+  }
+}</pre>
       </div>
     </div>
   </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Records API</title>
+    <title>Tags API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,11 +106,11 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Records API</h1>
+      <h1>Tags API</h1>
 
       <div class="article">
-        <h2>创建记录</h2>
-        <h3>POST /records</h3>
+        <h2>更新一个标签</h2>
+        <h3>PATCH /tags/:id</h3>
 
           <h3>Parameters</h3>
           <table class="parameters table table-striped table-bordered table-condensed">
@@ -123,26 +123,10 @@ table th, table td {
             <tbody>
               <tr>
                 <td class="required">
-                    <span class="name">amount</span>
+                    <span class="name">name</span>
                 </td>
                 <td>
-                  <span class="description">金额</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="required">
-                    <span class="name">category</span>
-                </td>
-                <td>
-                  <span class="description">类型: outgoings: 1|income: 2</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">notes</span>
-                </td>
-                <td>
-                  <span class="description">备注</span>
+                  <span class="description">标签名</span>
                 </td>
               </tr>
             </tbody>
@@ -153,33 +137,24 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: _xdml_record_money=6QVAXgr84cX6RqnSoKwdg7GcdhZCJLTRoJAVxxOnhr%2BYUPHtrqlTEpVazUv8UJJeg%2Fk6gBAV9hQIhcGaRGxgNY16kD3nbxr%2FDtKExsjPwBPWvL07IjQ0wZ%2BkAaaxj%2Bivhy31e1Us8bpJEIsz8X1383pxz0F9BBAjhbTZ5o7sQ1l1DLTKp3H8xOcsxtHQCuU%2BVZjIwd0XmmW0K724yHvL3FzEvrRTkjnINPpw5mFWvZ0SSzFpaQrldxoi--hMKkdAQ7dDcVAgK6--jg1QAZs81hmxS0kwv9CnBQ%3D%3D</pre>
+Cookie: _xdml_record_money=QOi8R6mHOaulcIlumQYAEvgZIlIDa%2FtfJE3NfTCBPYrd5kZkM%2FAcws26YdbW2W1f0pOBas6B%2FtWdLjbX8suwn2HUZ6WtyHlQ09uFlCkt734DMGC9AyYQ3N2eu5xaOksd17LqRNTjBEpgkPuRu19IDFCW8ll%2FTzl2RmTGDzGP4yddNZWhkouy3SNC4%2BYXkmKLny9O7XJsdm6%2FVtLwGKSIcly50wMWprk99kezfifGrzsmgU%2Fl45KJQ4DD--da4hSZLdaM38%2B12P--zv4Ei9j5CY2x91nvMvw45Q%3D%3D</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST /records</pre>
+          <pre class="request route highlight">PATCH /tags/166</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"amount":10000,"category":"outgoings","notes":"生活开支"}</pre>
+            <pre class="request body">{"name":"new"}</pre>
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-Set-Cookie: _xdml_record_money=16xrq%2Bfa3Z5W9BjiLPpCZh3H%2FryNMLHO7y3QHxX23TMFSvYI%2B%2FCFjKBkcAv6VEkTufXW4b%2FwwWmq2ZDdRs5REhxxIjP%2FDScOnHTO2qggXm51fLuq6JJzg0%2B1OBTo2qatwWpTo8vXxX%2Ffqe8Z6c1sES9t4nBFkPGdTRI3yj88lhme0DdelS1ZD6maAVC5a%2FPj8KIIgU7A3N1e%2BokKMSiSlNMASYtsvdnT0bTdS5fzmgZyFmeoaVbeNenh--s7D2uZL1tbgIw%2BPM--Yi2oxlHP3fs%2FrLWWjGe%2B5w%3D%3D; path=/; HttpOnly</pre>
+Set-Cookie: _xdml_record_money=oqGd2oh9w8yCgAUFINlqwCh9JP1gBAbFnkSiAOdVM0BIVbvimVZmmibmvDw9yuqQxapdjp0ZRRN0IN0FqTd9ZC%2FEomBCLRHDiZjXLeiGdmqEjy9NlNYpbonFOd2SrTUsrU85UnzWBN5IGLGlYqkhB2sqotYzyHNa%2BTw3A1yvRlqDXp8e2Cjp97fP8yt1qOqJx3xd2nwLKNBszO45jITlICSKqZ0zPSyxJezN3IgCvGs5zOIch8OLYfUA--MbKfVbSSE1xsqt1Z--4BZ1nHYAmWEA3pA%2FH08o%2Bg%3D%3D; path=/; HttpOnly</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
-              <pre class="response body">{
-  &quot;resources&quot;: {
-    &quot;id&quot;: 475,
-    &quot;amount&quot;: 10000,
-    &quot;category&quot;: &quot;outgoings&quot;,
-    &quot;notes&quot;: &quot;生活开支&quot;,
-    &quot;created_at&quot;: &quot;2022-11-30T02:47:03.240Z&quot;,
-    &quot;updated_at&quot;: &quot;2022-11-30T02:47:03.240Z&quot;
-  }
-}</pre>
+              <pre class="response body">[binary data]</pre>
       </div>
     </div>
   </body>
