@@ -1,5 +1,16 @@
 class TagsController < ApplicationController
   before_action :set_tag, only: [:show, :update, :destroy]
+  before_action :must_sign_in
+
+  # POST /tags
+  def create
+    render_resource Tag.create tag_params
+  end
+
+  # DELETE /tags/1
+  def destroy
+    head @tag.destroy ? :ok : :bad_request
+  end
 
   # GET /tags
   def index
@@ -8,21 +19,14 @@ class TagsController < ApplicationController
     render json: @tags
   end
 
+
+
   # GET /tags/1
   def show
     render json: @tag
   end
 
-  # POST /tags
-  def create
-    @tag = Tag.new(tag_params)
 
-    if @tag.save
-      render json: @tag, status: :created, location: @tag
-    else
-      render json: @tag.errors, status: :unprocessable_entity
-    end
-  end
 
   # PATCH/PUT /tags/1
   def update
@@ -33,10 +37,7 @@ class TagsController < ApplicationController
     end
   end
 
-  # DELETE /tags/1
-  def destroy
-    @tag.destroy
-  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -46,6 +47,6 @@ class TagsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def tag_params
-      params.require(:tag).permit(:name)
+      params.permit(:name)
     end
 end
