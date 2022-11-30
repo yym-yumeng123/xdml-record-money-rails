@@ -1,5 +1,5 @@
 class Tagging < ApplicationRecord
-  belongs_to :record
-  belongs_to :tag
-  validates :record_id, :tag_id, presence: true
+  belongs_to :record, required: true
+  belongs_to :tag, required: true
+  # validates :record_id, :tag_id, presence: true
 end
