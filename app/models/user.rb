@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :records
+  has_many :tags
+  has_many :taggings
 
   validates :email, presence: true
   validates :email, uniqueness: true

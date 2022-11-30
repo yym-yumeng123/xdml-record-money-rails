@@ -4,7 +4,7 @@ class TagsController < ApplicationController
 
   # POST /tags
   def create
-    render_resource Tag.create tag_params
+    render_resource Tag.create tag_params.merge user: current_user
   end
 
   # DELETE /tags/1
